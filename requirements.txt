@@ -19,3 +19,4 @@ Pygments==2.11.2
 martor
 gunicorn
 django
+uvicorn
