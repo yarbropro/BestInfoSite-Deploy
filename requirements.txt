@@ -30,3 +30,4 @@ wadllib==1.3.6
 zipp==1.0.0
 martor
 gunicorn
+django
