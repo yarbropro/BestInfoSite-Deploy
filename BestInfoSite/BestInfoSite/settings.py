@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-tj(2)5*f8rg67#k!$(9w0sixq$gg3(nz1what+55o+lwezgre6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -133,6 +133,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
+# python -m gunicorn BestInfoSite.asgi:application -k uvicorn.workers.UvicornWorker
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 
