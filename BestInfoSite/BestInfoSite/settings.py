@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "BestIndicators",
+    "Base"
 ]
 
 MIDDLEWARE = [
@@ -62,11 +63,11 @@ ROOT_URLCONF = "BestInfoSite.urls"
 # TEMPLATE_DIRS = (
 #     os.path.join(SETTINGS_PATH, 'templates'),
 # )
-
+print(os.path.join(BASE_DIR, 'Base/templates'))
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'Base/templates/Base')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -135,6 +136,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # python -m gunicorn BestInfoSite.asgi:application -k uvicorn.workers.UvicornWorker
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "Base/static/Base"
 ]
 
